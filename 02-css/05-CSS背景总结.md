@@ -629,12 +629,147 @@ background-repeat : repeat | no-repeat | repeat-x | repeat-y
   </html>
   ```
 
-- 最后一个参数是alpha 透明度  取值范围 0~1之间
+  ![image-20200724151224378](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724151226.png)
 
 - 我们习惯把0.3 的 0 省略掉  这样写  background: rgba(0, 0, 0, .3);
+
+- 最后一个参数是alpha 透明度  取值范围 0~1之间
 
 - 注意：  背景半透明是指盒子背景半透明， 盒子里面的内容不受影响
 
 - 因为是CSS3 ，所以 低于 ie9 的版本是不支持的。
 
 
+
+## 10 综合案例
+
+**五彩导航栏**
+
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>综合案例-五彩导航</title>
+    <style>
+        .nav a {
+            display: inline-block;
+            width: 120px;
+            height: 58px;
+            background-color: pink;
+            text-align: center;
+            line-height: 48px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav .bg1 {
+            background: url(images/bg1.png) no-repeat;
+        }
+
+        .nav .bg1:hover {
+            background-image: url(images/bg11.png);
+        }
+
+        .nav .bg2 {
+            background: url(images/bg2.png) no-repeat;
+        }
+
+        .nav .bg2:hover {
+            background-image: url(images/bg22.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#" class="bg1">五彩导航</a>
+        <a href="#" class="bg2">五彩导航</a>
+        <a href="#">五彩导航</a>
+        <a href="#">五彩导航</a>
+        <a href="#">五彩导航</a>
+    </div>
+</body>
+
+</html>
+```
+
+![image-20200724151511128](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724151513.png)
+
+**百度输入框**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+</head>
+<style>
+    input {
+        width: 535px;
+        height: 40px;
+        background: url(camera_01.png) no-repeat 500px center;
+    }
+    input:focus {
+        width: 535px;
+        height: 40px;
+        background: url(camera_02.png) no-repeat 500px center;
+    }
+</style>
+<body>
+<input type="text"/>
+</body>
+
+</html>
+```
+
+![](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724152009.gif)
+
+**导航栏**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+</head>
+<style>
+    a {
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        background-color: pink;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    a:hover {
+        background-color: orange;
+        color: black;
+    }
+</style>
+<body>
+<a href="#">新闻</a>
+<a href="#">体育</a>
+<a href="#">汽车</a>
+<a href="#">娱乐</a>
+</body>
+
+</html>
+```
+
+![](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724152445.gif)

@@ -84,3 +84,77 @@ CSS继承性口诀：  龙生龙，凤生凤，老鼠生的孩子会打洞。
 
 1） 如果选中了，那么以上面的公式来计权重。谁大听谁的。 
 2） 如果没有选中，那么权重是0，因为继承的权重为0.
+
+**案例**
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS权重练习</title>
+    <style>
+        .nav {
+            color: red;
+        }
+        /* 继承的权重是0 */
+        li {
+            color: pink;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <ul class="nav">
+        <li>人生四大悲</li>
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没wifi</li>
+    </ul>
+</body>
+</html>
+```
+
+![image-20200724152709118](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724152711.png)
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS权重练习</title>
+    <style>
+        /* .nav li  权重是 11 */
+        .nav li {
+            color: red;
+        }
+        /* 需求把第一个小li 颜色改为 粉色加粗 ? */
+        /* .pink  权重是 10    .nav .pink  20  */
+       .nav .pink {
+            color: pink;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul class="nav">
+        <li class="pink">人生四大悲</li>
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没wifi</li>
+    </ul>
+</body>
+</html>
+```
+
+![image-20200724152758364](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724152800.png)

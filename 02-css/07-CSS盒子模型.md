@@ -57,6 +57,40 @@ border : border-width || border-style || border-color
 | border-top-color:颜色;     | border- bottom-color:颜色;    | border-left-color:颜色;     | border-right-color:颜色;     |
 | border-top:宽度 样式 颜色; | border-bottom:宽度 样式 颜色; | border-left:宽度 样式 颜色; | border-right:宽度 样式 颜色; |
 
+**案例**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框的练习</title>
+    <style>
+        /* 请给一个 200*200 的盒子，设置上边框为红色，其余边框为蓝色 */
+        div {
+            width: 200px;
+            height: 200px;
+            /* border-top: 1px solid red;
+            border-bottom: 1px solid blue;
+            border-left: 1px solid blue;
+            border-right: 1px solid blue; */
+            /* border包含四条边 */
+            border: 1px solid blue;
+            /* 层叠性 只是层叠了 上边框啊 */
+            border-top: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+```
+
+![image-20200724153122871](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724153124.png)
+
 ### 1.3 表格的细线边框
 
 - 通过表格的`cellspacing="0"`,将单元格与单元格之间的距离设置为0，
@@ -88,6 +122,105 @@ border : border-width || border-style || border-color
 	}
 </style>
 ~~~
+
+**案例**
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>今日小说排行榜</title>
+    <style>
+        table {
+            width: 500px;
+            height: 249px;
+        }
+        th {
+            height: 35px;
+        }
+        table,
+        td, th {
+            border: 1px solid pink;
+            /* 合并相邻的边框 */
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table align="center" cellspacing="0">
+    <thead>
+        <tr>
+            <th>排名</th>
+            <th>关键词</th>
+            <th>趋势</th>
+            <th>进入搜索</th>
+            <th>最近七日</th>
+            <th>相关链接</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>鬼吹灯</td>
+            <td><img src="down.jpg"></td>
+            <td>456</td>
+            <td>123</td>
+            <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+
+        <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="down.jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+        <tr>
+                <td>3</td>
+                <td>西游记</td>
+                <td><img src="up.jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+        <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="down.jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+        <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="down.jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+        <tr>
+                <td>1</td>
+                <td>鬼吹灯</td>
+                <td><img src="down.jpg"></td>
+                <td>456</td>
+                <td>123</td>
+                <td> <a href="#">贴吧</a> <a href="#">图片</a> <a href="#">百科</a> </td>
+        </tr>
+    </tbody>           
+    </table>
+</body>
+</html>
+```
+
+![image-20200724153309551](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724153310.png)
 
 ## 2. 内边距（padding）
 
@@ -149,6 +282,54 @@ border : border-width || border-style || border-color
 
 > 如果没有给一个盒子指定宽度， 此时，如果给这个盒子指定padding， 则不会撑开盒子。
 
+**案例**
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新浪导航</title>
+    <style>
+        .nav {
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            background-color: #fcfcfc;
+            line-height: 41px;
+        }
+        .nav a {
+            /* a属于行内元素 此时必须要转换 行内块元素 */
+            display: inline-block;
+            height: 41px;
+            padding: 0 20px;
+            font-size: 12px;
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #eee;
+            color: #ff8500;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+        <a href="#">三个字</a>
+    </div>
+</body>
+</html>
+```
+
+![image-20200724153425509](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724153426.png)
+
 ## 3. 外边距（margin）
 
 ### 3.1 外边距
@@ -165,6 +346,55 @@ border : border-width || border-style || border-color
 | margin-bottom | 下外边距 |
 
 margin值的简写 （复合写法）代表意思  跟 padding 完全相同。
+
+**案例**
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单版小米侧边栏</title>
+    <style>
+        /* 1. 把a转换为块级元素 */
+        a {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: #55585a;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            padding-left: 30px;
+            line-height: 40px;
+        }
+
+        /* 2 鼠标经过链接变换背景颜色 */
+        a:hover {
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#">手机 电话卡</a>
+    <a href="#">电视 盒子</a>
+    <a href="#">笔记本 平板</a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">智能 路由器</a>
+    <a href="#">健康 儿童</a>
+    <a href="#">耳机 音响</a>
+</body>
+
+</html>
+```
+
+![image-20200724153648430](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724153651.png)
 
 ### 3.3 块级盒子水平居中
 
@@ -259,13 +489,7 @@ margin: 10px auto;  /* 块级盒子水平居中  左右margin 改为 auto 就阔
 
 还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。
 
-## 6. 盒子模型布局稳定性
-
-- 学习完盒子模型，内边距和外边距，什么情况下用内边距，什么情况下用外边距？
-
-  - 大部分情况下是可以混用的。  就是说，你用内边距也可以，用外边距也可以。 你觉得哪个方便，就用哪个。
-
-我们根据稳定性来分，建议如下：
+## 4. 盒子模型布局稳定性
 
 按照 优先使用  宽度 （width）  其次 使用内边距（padding）    再次  外边距（margin）。   
 
@@ -278,3 +502,86 @@ margin: 10px auto;  /* 块级盒子水平居中  左右margin 改为 auto 就阔
   - padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。
   - width   没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。
 
+**综合案例**
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>综合案例-产品模块</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      body {
+          background-color: #f5f5f5;
+      }
+      a {
+          color: #333;
+          text-decoration: none;
+      }
+      .box {
+          width: 298px;
+          height: 415px;
+          background-color:#fff;
+          /* 让块级的盒子水平居中对齐 */
+          margin: 100px auto;
+      }
+      .box img {
+          /* 图片的宽度和父亲一样宽 */
+          width: 100%;
+      }
+      .review {
+          height: 70px;
+          font-size: 14px;
+          /* 因为这个段落没有 width属性 所有 padding不会撑开盒子的宽度 */
+          padding: 0 28px;
+          margin-top: 30px;
+      }
+      .appraise {
+          font-size: 12px;
+          color: #b0b0b0;
+          margin-top: 20px;
+          padding: 0 28px;
+      }
+      .info {
+          font-size: 14px;
+          margin-top: 15px;
+          padding: 0 28px;
+      }
+      .info h4 {
+          display: inline-block;
+          font-weight: 400;
+        
+      }
+      .info span {
+          color: #ff6700;    
+      }
+      .info em {
+          font-style: normal;
+          color: #ebe4e0;
+          margin: 0 6px 0 15px;
+      }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/img.jpg" alt="">
+        <p class="review">快递牛，整体不错蓝牙可以说秒连。红米给力</p>
+        <div class="appraise">来自于 117384232 的评价</div>
+        <div class="info">
+               <h4> <a href="#">Redmi AirDots真无线蓝...</a></h4>
+               <em>|</em>
+               <span> 99.9元</span>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+![image-20200724153828244](https://yulingsimg-1300687702.cos.ap-chengdu.myqcloud.com/20200724153829.png)
