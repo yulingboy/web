@@ -35,6 +35,4 @@ vertical-align : baseline |top |middle |bottom
 
   - 给img vertical-align:middle | top| bottom等等。  让图片不要和基线对齐。
 
-    
-
   - 给img 添加 display：block; 转换为块级元素就不会存在问题了。
